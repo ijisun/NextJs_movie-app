@@ -26,3 +26,13 @@
 .nav ul li:hover {
   transform: scale(1.05);
 }
+
+.nav ul li button {
+  all: unset;
+  color: inherit;
+}
+
+.nav ul li button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

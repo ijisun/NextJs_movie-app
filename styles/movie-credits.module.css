@@ -1,0 +1,45 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: 60px;
+  justify-content: center;
+}
+
+.container ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  text-align: center;
+}
+
+.container ul li img {
+  border-radius: 10px;
+  height: 300px;
+  object-fit: cover;
+  background-color: #272727;
+  display: block;
+}
+
+.container ul li div {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.character {
+  color: #f5e4ad;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.credit_label {
+  color: #9b9b9b;
+}

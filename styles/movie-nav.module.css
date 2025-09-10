@@ -1,0 +1,31 @@
+.nav {
+  width: 50%;
+  background-color: #2d2d2d;
+  position: fixed;
+  top: 30px;
+  padding: 20px 0px;
+  border-radius: 50px;
+  left: 5%;
+  z-index: 10;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 8%;
+}
+
+.nav ul li {
+  transition: all 0.1s ease-in-out;
+}
+
+.nav ul li:hover {
+  transform: scale(1.05);
+}
+
+.active {
+  color: #ffd780;
+  font-weight: 600;
+  transform: scale(1.05);
+  text-decoration: underline;
+}

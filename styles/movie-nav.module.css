@@ -1,22 +1,21 @@
 .nav {
+  width: 50%;
   background-color: #2d2d2d;
   position: fixed;
   top: 30px;
-  padding: 20px 40px;
+  padding: 20px 0px;
   border-radius: 50px;
-  right: 5%;
+  left: 5%;
   z-index: 10;
 }
 
 .nav ul {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 8%;
 }
 
 .nav ul li {
-  list-style: none;
-  transform: none;
   transition: all 0.1s ease-in-out;
 }
 
@@ -24,12 +23,9 @@
   transform: scale(1.05);
 }
 
-.nav ul li button {
-  all: unset;
-  color: inherit;
-}
-
-.nav ul li button:hover {
-  cursor: pointer;
+.active {
+  color: #ffd780;
+  font-weight: 600;
+  transform: scale(1.05);
   text-decoration: underline;
 }

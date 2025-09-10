@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import { fetchMovie } from "../../../../../shared/api/movie";
 import { IParams } from "../../../../../types/movieId";
 import MovieVideos from "../../../../../components/movie-videos";
 import styles from "../../../../../styles/loading.module.css";

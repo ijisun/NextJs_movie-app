@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import styles from "../styles/movie-nav.module.css";
 import { usePathname } from "next/navigation";
+import styles from "../styles/movie-nav.module.css";
 
 export default function MovieDetailNav({ id }: { id: string }) {
   const path = usePathname();

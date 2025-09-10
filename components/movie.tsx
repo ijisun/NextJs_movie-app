@@ -1,8 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import styles from "../styles/movie.module.css";
-import Link from "next/link";
 
 interface IMovieProps {
   title: string;

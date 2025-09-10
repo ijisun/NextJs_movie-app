@@ -6,30 +6,49 @@
 .container ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  column-gap: 80px;
+  row-gap: 40px;
 }
 
 .container ul li {
   display: flex;
   gap: 40px;
+  overflow: hidden;
 }
 
 .container ul li img {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
   border-radius: 10px;
   background-color: #272727;
+  flex-shrink: 0;
 }
 
 .container ul li div {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex: 1;
+}
+
+.container ul li div h3 {
+  font-size: 20px;
 }
 
 .container ul li div span {
   font-size: 14px;
+  color: #c4c4c4;
 }
 
 .container ul li div p {
-  line-height: 1.2;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 9;
+  line-clamp: 9;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
 }

@@ -1,0 +1,35 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.container ul li {
+  display: flex;
+  gap: 40px;
+}
+
+.container ul li img {
+  width: 200px;
+  border-radius: 10px;
+  background-color: #272727;
+}
+
+.container ul li div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container ul li div span {
+  font-size: 14px;
+}
+
+.container ul li div p {
+  line-height: 1.2;
+}

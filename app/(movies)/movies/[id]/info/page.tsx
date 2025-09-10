@@ -4,14 +4,6 @@ import { Suspense } from "react";
 import MovieInfo from "../../../../../components/movie-info";
 import styles from "../../../../../styles/loading.module.css";
 
-export async function generateMetadata({ params }: IParams) {
-  const { id } = await params;
-  const movie = await fetchMovie(id);
-  return {
-    title: movie.title,
-  };
-}
-
 export default async function Info({ params }: IParams) {
   const { id } = await params;
   return (

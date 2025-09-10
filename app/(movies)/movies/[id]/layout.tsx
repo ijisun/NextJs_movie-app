@@ -1,4 +1,14 @@
 import MovieDetailNav from "../../../../components/movie-nav";
+import { fetchMovie } from "../../../../shared/api/movie";
+import { IParams } from "../../../../types/movieId";
+
+export async function generateMetadata({ params }: IParams) {
+  const { id } = await params;
+  const movie = await fetchMovie(id);
+  return {
+    title: movie.title,
+  };
+}
 
 export default async function MovieLayout({
   children,

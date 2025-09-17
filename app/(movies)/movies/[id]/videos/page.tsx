@@ -4,7 +4,7 @@ import MovieVideos from "../../../../../components/movie-videos";
 import styles from "../../../../../styles/loading.module.css";
 
 export default async function Videos({ params }: IParams) {
-  const { id } = await params;
+  const { id } = params;
   return (
     <>
       <Suspense

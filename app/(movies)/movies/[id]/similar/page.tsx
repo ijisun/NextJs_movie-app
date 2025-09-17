@@ -4,7 +4,7 @@ import MovieSimilar from "../../../../../components/movie-similar";
 import styles from "../../../../../styles/loading.module.css";
 
 export default async function Similar({ params }: IParams) {
-  const { id } = await params;
+  const { id } = params;
   return (
     <div>
       <Suspense

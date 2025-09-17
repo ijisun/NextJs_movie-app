@@ -4,7 +4,7 @@ import MovieInfo from "../../../../../components/movie-info";
 import styles from "../../../../../styles/loading.module.css";
 
 export default async function Info({ params }: IParams) {
-  const { id } = await params;
+  const { id } = params;
   return (
     <>
       <Suspense

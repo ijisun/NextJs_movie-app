@@ -4,7 +4,7 @@ import MovieCredits from "../../../../../components/movie-credit";
 import styles from "../../../../../styles/loading.module.css";
 
 export default async function Credits({ params }: IParams) {
-  const { id } = await params;
+  const { id } = params;
   return (
     <>
       <Suspense

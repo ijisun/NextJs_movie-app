@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { IParams } from "../../../../../types/movieId";
+import { IParams } from "../../../../../types/movie";
 import MovieSimilar from "../../../../../components/movie-similar";
 import styles from "../../../../../styles/loading.module.css";
 

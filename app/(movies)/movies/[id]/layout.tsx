@@ -1,5 +1,5 @@
 import { fetchMovie } from "../../../../shared/api/movie";
-import { IParams } from "../../../../types/movieId";
+import { IParams } from "../../../../types/movie";
 import MovieDetailNav from "../../../../components/movie-nav";
 
 export async function generateMetadata({ params }: IParams) {

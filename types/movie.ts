@@ -1,9 +1,9 @@
 export interface IParams {
-  params: { id: number };
+  params: { id: string };
 }
 
 export interface MovieIdProps {
-  id: number;
+  id: string;
 }
 
 export interface MovieDefault {
@@ -12,7 +12,7 @@ export interface MovieDefault {
 }
 
 export interface MovieList extends MovieDefault {
-  id: number;
+  id: string;
 }
 
 export interface MovieDetail extends MovieDefault {
@@ -28,13 +28,13 @@ export interface MovieVideo {
 }
 
 export interface MovieCredit {
-  id: number;
+  id: string;
   name: string;
   character: string;
   profile_path: string;
 }
 
-export type SimilarMovies = Omit<MovieDetail, "homepage"> & { id: number };
+export type SimilarMovies = Omit<MovieDetail, "homepage"> & { id: string };
 
 export interface MovieProviderItem {
   provider_id: number;

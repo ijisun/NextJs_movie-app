@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "../styles/movie-nav.module.css";
 
-export default function MovieDetailNav({ id }: { id: number }) {
+export default function MovieDetailNav({ id }: { id: string }) {
   const path = usePathname();
   const nav_url = {
     movie_info: `/movies/${id}/info`,

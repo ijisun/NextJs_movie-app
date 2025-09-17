@@ -15,7 +15,7 @@ export default async function MovieLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ id: number }>;
+  params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
   return (

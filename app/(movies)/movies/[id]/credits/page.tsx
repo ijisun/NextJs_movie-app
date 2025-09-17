@@ -1,9 +1,8 @@
 import { Suspense } from "react";
-import { IParams } from "../../../../../types/movie";
 import MovieCredits from "../../../../../components/movie-credit";
 import styles from "../../../../../styles/loading.module.css";
 
-export default async function Credits({ params }: IParams) {
+export default async function Credits({ params }: { params: { id: number } }) {
   const { id } = params;
   return (
     <>

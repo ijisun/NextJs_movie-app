@@ -1,9 +1,8 @@
 import { Suspense } from "react";
-import { IParams } from "../../../../../types/movie";
 import MovieSimilar from "../../../../../components/movie-similar";
 import styles from "../../../../../styles/loading.module.css";
 
-export default async function Similar({ params }: IParams) {
+export default async function Similar({ params }: { params: { id: number } }) {
   const { id } = params;
   return (
     <div>

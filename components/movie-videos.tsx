@@ -1,8 +1,9 @@
 import { fetchMovieVideos } from "../shared/api/movie";
 import styles from "../styles/movie-videos.module.css";
+import { MovieIdProps, MovieVideo } from "../types/movie";
 
-export default async function MovieVideos({ id }: { id: string }) {
-  const videos = await fetchMovieVideos(id);
+export default async function MovieVideos({ id }: MovieIdProps) {
+  const videos: MovieVideo[] = await fetchMovieVideos(id);
   return (
     <div className={styles.container}>
       {videos.map((video) => (

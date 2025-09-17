@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import { IParams } from "../../../../../types/movieId";
 import MovieVideos from "../../../../../components/movie-videos";
 import styles from "../../../../../styles/loading.module.css";
+import { IParams } from "../../../../../types/movie";
 
 export default async function Videos({ params }: IParams) {
   const { id } = await params;

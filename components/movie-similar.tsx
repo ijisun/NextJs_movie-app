@@ -1,8 +1,9 @@
 import { fetchSimilarMovies } from "../shared/api/movie";
 import styles from "../styles/movie-similar.module.css";
+import { MovieIdProps, SimilarMovies } from "../types/movie";
 
-export default async function MovieSimilar({ id }: { id: string }) {
-  const similar = await fetchSimilarMovies(id);
+export default async function MovieSimilar({ id }: MovieIdProps) {
+  const similar: SimilarMovies[] = await fetchSimilarMovies(id);
   return (
     <div className={styles.container}>
       <ul>

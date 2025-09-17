@@ -1,8 +1,9 @@
 import { fetchMovie } from "../shared/api/movie";
 import styles from "../styles/movie-info.module.css";
+import { MovieIdProps, MovieDetail } from "../types/movie";
 
-export default async function MovieInfo({ id }: { id: string }) {
-  const movie = await fetchMovie(id);
+export default async function MovieInfo({ id }: MovieIdProps) {
+  const movie: MovieDetail = await fetchMovie(id);
   return (
     <div className={styles.container}>
       <img

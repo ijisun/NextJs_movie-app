@@ -3,7 +3,7 @@ import MovieInfo from "../../../../../components/movie-info";
 import styles from "../../../../../styles/loading.module.css";
 import { IParams } from "../../../../../types/movie";
 
-export default async function Info({ params }: IParams) {
+export default function Info({ params }: IParams) {
   const { id } = params;
   return (
     <>

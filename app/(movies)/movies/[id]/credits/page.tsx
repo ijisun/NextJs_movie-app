@@ -3,8 +3,8 @@ import MovieCredits from "../../../../../components/movie-credit";
 import styles from "../../../../../styles/loading.module.css";
 import { IParams } from "../../../../../types/movie";
 
-export default function Credits({ params }: IParams) {
-  const { id } = params;
+export default async function Credits({ params }: IParams) {
+  const { id } = await params;
   return (
     <>
       <Suspense

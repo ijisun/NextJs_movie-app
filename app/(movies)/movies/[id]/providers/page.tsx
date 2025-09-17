@@ -3,8 +3,8 @@ import { IParams } from "../../../../../types/movie";
 import MovieProviders from "../../../../../components/movie-providers";
 import styles from "../../../../../styles/loading.module.css";
 
-export default function Providers({ params }: IParams) {
-  const { id } = params;
+export default async function Providers({ params }: IParams) {
+  const { id } = await params;
   return (
     <div>
       <Suspense

@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { fetchMovieProviders } from "../shared/api/movie";
 import styles from "../styles/movie-providers.module.css";
+import { MovieIdProps, MovieProviders as Providers } from "../types/movie";
 
-export default async function MovieProviders({ id }: { id: string }) {
-  const providers = await fetchMovieProviders(id);
+export default async function MovieProviders({ id }: MovieIdProps) {
+  const providers: Providers = await fetchMovieProviders(id);
 
   // 'KR'의 스트리밍 서비스 배열 가져오기
   const KR = providers.KR || null;

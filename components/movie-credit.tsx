@@ -1,8 +1,9 @@
 import { fetchMovieCredits } from "../shared/api/movie";
 import styles from "../styles/movie-credits.module.css";
+import { MovieIdProps, MovieCredit } from "../types/movie";
 
-export default async function MovieCredits({ id }: { id: string }) {
-  const credits = await fetchMovieCredits(id);
+export default async function MovieCredits({ id }: MovieIdProps) {
+  const credits: MovieCredit[] = await fetchMovieCredits(id);
   return (
     <div className={styles.container}>
       <ul>

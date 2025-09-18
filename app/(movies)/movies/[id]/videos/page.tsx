@@ -1,17 +1,4 @@
-import { Suspense } from "react";
 import MovieVideos from "../../../../../components/movie-videos";
-import styles from "../../../../../styles/loading.module.css";
-import { IParams } from "../../../../../types/movie";
+import createMoviePage from "../../../../../shared/utils/createMoviePage";
 
-export default async function Videos({ params }: IParams) {
-  const { id } = await params;
-  return (
-    <>
-      <Suspense
-        fallback={<h1 className={styles.loading}>Loading Movie Videos</h1>}
-      >
-        <MovieVideos id={id} />
-      </Suspense>
-    </>
-  );
-}
+export default createMoviePage(MovieVideos, "Loading Movie Videos");

@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { fetchMovieProviders } from "../shared/api/movie";
 import styles from "../styles/movie-providers.module.css";
-import { MovieIdProps, MovieProviders as Providers } from "../types/movie";
+import {
+  MovieIdProps,
+  MovieProviderItem,
+  MovieProviders as Providers,
+} from "../types/movie";
 
 export default async function MovieProviders({ id }: MovieIdProps) {
   const providers: Providers = await fetchMovieProviders(id);
@@ -22,58 +26,32 @@ export default async function MovieProviders({ id }: MovieIdProps) {
   const buy = KR.buy || [];
   const rent = KR.rent || [];
 
+  // 각 서비스 배열 렌더링
+  const renderProviderList = (title: string, items: MovieProviderItem[]) => {
+    if (items.length === 0) return null;
+    return (
+      <>
+        <h3>{title}</h3>
+        <ul>
+          {items.map((item) => (
+            <li key={item.provider_id}>
+              <img
+                src={`https://image.tmdb.org/t/p/original${item.logo_path}`}
+                alt={item.provider_name}
+              />
+              <span>{item.provider_name}</span>
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  };
+
   return (
     <div className={styles.container}>
-      {flatrate.length > 0 && (
-        <>
-          <h3>Streaming</h3>
-          <ul>
-            {flatrate.map((item) => (
-              <li key={item.provider_id}>
-                <img
-                  src={`https://image.tmdb.org/t/p/original${item.logo_path}`}
-                  alt={item.provider_name}
-                />
-                <span>{item.provider_name}</span>
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-
-      {buy.length > 0 && (
-        <>
-          <h3>Buy</h3>
-          <ul>
-            {buy.map((item) => (
-              <li key={item.provider_id}>
-                <img
-                  src={`https://image.tmdb.org/t/p/original${item.logo_path}`}
-                  alt={item.provider_name}
-                />
-                <span>{item.provider_name}</span>
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-
-      {rent.length > 0 && (
-        <>
-          <h3>Rent</h3>
-          <ul>
-            {rent.map((item) => (
-              <li key={item.provider_id}>
-                <img
-                  src={`https://image.tmdb.org/t/p/original${item.logo_path}`}
-                  alt={item.provider_name}
-                />
-                <span>{item.provider_name}</span>
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
+      {renderProviderList("Streaming", flatrate)}
+      {renderProviderList("Buy", buy)}
+      {renderProviderList("Rent", rent)}
       <Link href={KR.link} target={"_blank"} className={styles.link}>
         Watch now
       </Link>

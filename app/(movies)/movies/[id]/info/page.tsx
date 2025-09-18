@@ -1,17 +1,4 @@
-import { Suspense } from "react";
 import MovieInfo from "../../../../../components/movie-info";
-import styles from "../../../../../styles/loading.module.css";
-import { IParams } from "../../../../../types/movie";
+import createMoviePage from "../../../../../shared/utils/createMoviePage";
 
-export default async function Info({ params }: IParams) {
-  const { id } = await params;
-  return (
-    <>
-      <Suspense
-        fallback={<h1 className={styles.loading}>Loading Movie info</h1>}
-      >
-        <MovieInfo id={id} />
-      </Suspense>
-    </>
-  );
-}
+export default createMoviePage(MovieInfo, "Loading Movie Info");

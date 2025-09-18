@@ -1,17 +1,4 @@
-import { Suspense } from "react";
 import MovieCredits from "../../../../../components/movie-credit";
-import styles from "../../../../../styles/loading.module.css";
-import { IParams } from "../../../../../types/movie";
+import createMoviePage from "../../../../../shared/utils/createMoviePage";
 
-export default async function Credits({ params }: IParams) {
-  const { id } = await params;
-  return (
-    <>
-      <Suspense
-        fallback={<h1 className={styles.loading}>Loading Movie Credits</h1>}
-      >
-        <MovieCredits id={id} />
-      </Suspense>
-    </>
-  );
-}
+export default createMoviePage(MovieCredits, "Loading Movie Credits");

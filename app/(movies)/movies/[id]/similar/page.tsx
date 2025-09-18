@@ -1,17 +1,4 @@
-import { Suspense } from "react";
 import MovieSimilar from "../../../../../components/movie-similar";
-import styles from "../../../../../styles/loading.module.css";
-import { IParams } from "../../../../../types/movie";
+import createMoviePage from "../../../../../shared/utils/createMoviePage";
 
-export default async function Similar({ params }: IParams) {
-  const { id } = await params;
-  return (
-    <div>
-      <Suspense
-        fallback={<h1 className={styles.loading}>Loading Similar Movies</h1>}
-      >
-        <MovieSimilar id={id} />
-      </Suspense>
-    </div>
-  );
-}
+export default createMoviePage(MovieSimilar, "Loading Similar Movies");
